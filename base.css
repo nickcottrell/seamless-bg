@@ -1,0 +1,31 @@
+body {
+	background-color:#000;
+	}
+
+.bg img {
+	position:fixed;
+	top:0;
+	left:0
+	}
+
+.bg img.bgwidth {
+	width:100%
+	}
+	
+.bg img.bgheight {
+	height:100%
+	}
+	
+#container{
+	width:800px;
+	margin:0 auto;
+	position:relative
+	}
+
+.next_btn {
+	float:right;
+}
+
+.prev_btn {
+	float:left;
+}
