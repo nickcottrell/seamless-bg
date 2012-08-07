@@ -52,41 +52,30 @@ $(document).ready(function() {
 	//define the values
 	var VALUES = ['slide01', 'slide02', 'slide03', 'slide04'];
 	var KEYWORD = 'start';
-
-	//optional debug value
-	var DEBUG = 'debug';
+	var PLAY = "play";
+	var STOP = "pause";
+	var CONTROL = "controls";
+	
 	//search the current document url
 	var searchString = document.location.search;
+
 	// strip off the leading '?'
 	searchString = searchString.substring(1);
-	//get values between the '=' 
-	var multiple_values = searchString.split("=");		
-	//set the vars to compare and validate
-	var compare_keyword = multiple_values[0];
-	var compare_value = multiple_values[1];
-	
-	
-	
-	
-		//set the vars to compare and validate
-/*	var compare_keyword = multiple_values[0];
-	var amp = multiple_values[1];
+	//get the values on both sides of the ampersand
+	//this should come before you split the equals because
+	//you'll have two sets of = args on both sides of the amp
+	var amp_values = searchString.split("&");
 
-	var amp_values = amp.split("&");
+	var value_set1 = amp_values[0].split("=");
+	var value_set2 = amp_values[1].split("=");
 	
-	if (debug_value) {alert(amp_values);}
+	var compare_keyword = value_set1[0];
+	var compare_value = value_set2[1];
 	
-	var compare_value = amp_values[0];
-	var amp_value = amp_values[1];
-	
-*/	
-	
-	
+	var control_keyword = value_set2[0];
+	var control_value = value_set2[1];
 	
 	
-	
-	
-
 	//check if it matches the KEYWORD variable
 	if (compare_keyword == KEYWORD) {
 		//set the match as true
@@ -142,7 +131,36 @@ $(document).ready(function() {
 	//define the rest of the vars
 	var $boxes = $(".SLIDE_ADVANCE_JS img"),
 	$currentBox = $first_slide.show();		
+
+
+
+
+
+
+
+
+
+
+
 	
+	if (control_keyword == CONTROL && control_value == PLAY) {
+		play_state = true;	
+		stop_state = false;		
+	}
+	
+	if (control_keyword == CONTROL && control_value == STOP) {
+		stop_state = true;
+		play_state = false;
+	}
+	 alert(play_state);
+
+
+
+
+
+
+
+if(play_state){
 	//default slide rotation interval	
 	setInterval(function(){
 		$currentBox.fadeOut(300, function(){
@@ -151,8 +169,30 @@ $(document).ready(function() {
            		$currentBox = $boxes.first();
         	}
 			$currentBox.fadeIn(200);
+			window.history.pushState("slide02", "Title", "slide03");
+
 		});
 	}, 10000);
+	
+} else {
+	return false;
+}//endif
+
+
+
+	if(stop_state){
+	//default slide rotation interval	
+		$('.SLIDE_ADVANCE_JS img').show();
+	} else {
+		return false;
+	}//endif
+
+
+	 alert(stop_state);
+
+
+
+
 
 	//click to next slide
 	$('.NEXT_JS').click(function(){
