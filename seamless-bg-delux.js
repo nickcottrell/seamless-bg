@@ -67,14 +67,15 @@ $(document).ready(function() {
 	var amp_values = searchString.split("&");
 
 	var value_set1 = amp_values[0].split("=");
-	var value_set2 = amp_values[1].split("=");
+	if (amp_values[1] != undefined) {var value_set2 = amp_values[1].split("=")};
 	
 	var compare_keyword = value_set1[0];
-	var compare_value = value_set2[1];
+	var compare_value = value_set1[1];
 	
-	var control_keyword = value_set2[0];
-	var control_value = value_set2[1];
-	
+	if (amp_values[1] != undefined){
+		var control_keyword = value_set2[0];
+		var control_value = value_set2[1];
+	}
 	
 	//check if it matches the KEYWORD variable
 	if (compare_keyword == KEYWORD) {
@@ -142,18 +143,23 @@ $(document).ready(function() {
 
 
 
-	
+	//play active
 	if (control_keyword == CONTROL && control_value == PLAY) {
-		play_state = true;	
-		stop_state = false;		
+		var play_state = true;	
+		var stop_state = false;		
 	}
 	
+	//play inactive
 	if (control_keyword == CONTROL && control_value == STOP) {
-		stop_state = true;
-		play_state = false;
+		var stop_state = true;
+		var play_state = false;
 	}
-	 alert(play_state);
-
+	
+	//default playstate
+	if (control_keyword == undefined && control_value == undefined) {
+		var play_state = true;	
+		var stop_state = false;		
+	}
 
 
 
