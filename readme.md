@@ -1,7 +1,7 @@
 # Seamless
-## Borderless slideshow that accepts query string params
+## Slideshow that accepts query string params
 
-Seemless is a fullscreen slide show that is controlled by query string parameters. That way, if you want to make a slideshow where there are options to view particular slides, or to begin at particular slides, you can use query strings to control the slideshow.  
+Seemless is a fullscreen slide show that is controlled by query string parameters. That way, if you want to make a slideshow where there are options to view particular slides, or to begin at particular slides, you can use query strings to control it.  
 
 ### Demo
 
@@ -19,9 +19,9 @@ If you want to make it [start on slide two](http://istitch.net/seamless-bg/demo-
 
 Note: the default state is to begin playing.
 
-If you want to [pause the state](http://istitch.net/seamless-bg/demo-delux.html?start=slide02&controls=pause), you can add:
+If you want to [pause the state](http://istitch.net/seamless-bg/demo-delux.html?start=slide02&control=pause), you can add:
 
-    ?start=slide02&controls=pause
+    ?start=slide02&control=pause
 
 Note: you have to add it as the second argument so you need to specify a start slide.
-CURRENTLY FIXING A BUG WITH THIS FEATURE
+THERE'S A BUG THAT'S NOTED IN THE CODE FOR THIS
