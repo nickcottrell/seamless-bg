@@ -57,6 +57,7 @@ $(document).ready(function() {
 			KEYWORD 		= 'start',
 			PLAY 			= "play",
 			STOP 			= "pause",
+			//this doesn't work and i am not sure why, so for now i am just using the word 'control' in the demo because for whatever reaon it works better as an undefined.
 			CONTROL 		= "controls";
 	
 		
