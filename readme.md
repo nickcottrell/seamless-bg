@@ -1,7 +1,7 @@
 # Seamless
 ## Slideshow that accepts query string params
 
-Seemless is a fullscreen slide show that is controlled by query string parameters. That way, if you want to make a slideshow where there are options to view particular slides, or to begin at particular slides, you can use query strings to control it.  
+Seamless is a slide show that you can control with query string parameters. That way, if you want to make a slideshow where there are options to begin at particular slides, or control pause and play states, you can use query strings to easily integrate it with other UI elements.  
 
 ### Demo
 
