@@ -16,12 +16,12 @@ If you want to make it [start on slide two](http://istitch.net/seamless-bg/?slid
     ?slide=2
 
 
-If you want to [pause the state](http://istitch.net/seamless-bg/?start=slide02&control=pause), use:
+If you want to [pause the state](http://istitch.net/seamless-bg/?slide=2&control=pause), use:
 
     &control=pause
 
 
-If you want the [slides to play](http://istitch.net/seamless-bg/?start=slide02&control=play), use:
+If you want the [slides to play](http://istitch.net/seamless-bg/?slide=2&control=play), use:
 
     &control=play
 
