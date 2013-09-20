@@ -1,3 +1,23 @@
+/*
+                   /)           
+ _    _  _  ___   //  _  _   _  
+/_)__(/_(_(_// (_(/__(/_/_)_/_)_
+                                
+ ____     ____      
+/\  _`\  /\  _`\    
+\ \ \L\ \\ \ \L\_\  
+ \ \  _ <'\ \ \L_L  
+  \ \ \L\ \\ \ \/, \
+   \ \____/ \ \____/
+    \/___/   \/___/ 
+                                     
+   /)     /)        
+ _(/  _  //    __/  
+(_(__(/_(/_(_(_ /(__
+               /            
+*/
+
+
 $(document).ready(function() {
 
 		var searchString = document.location.search;
@@ -9,7 +29,7 @@ $(document).ready(function() {
 		play_control = play_control.split("=");
 		play_control = play_control[1];		
 
-		var images=$('#images img');
+		var images=$('.BG_IMG');
 
 		if (slide_control === undefined ) {
 		var index=0;
@@ -17,24 +37,24 @@ $(document).ready(function() {
  		var index=slide_control-1;
 		}
 	
-		images.eq(index).fadeIn(200);
+		images.eq(index).fadeIn(100);
 
 		if (play_control === undefined ) {
-		setInterval(playSlides,1400);
+		setInterval(playSlides,3400);
 		} else if (play_control == "play"){
-		setInterval(playSlides,1400);
+		setInterval(playSlides,3400);
 		} else if (play_control == "pause"){
 			// do nothing
 		}
 		
 		function playSlides(){
-			images.eq(index).fadeIn(200).delay(1000).fadeOut(300);
+			images.eq(index).fadeIn(100).delay(3000).fadeOut(200);
 			index=(index+1) % images.length;
 			window.history.pushState("?slide=" + index-1 + "&control=" + play_control, "Title", "?slide=" + index + "&control=" + play_control);
 		};
 		
-		$('.NEXT').click(function(){
-			images.eq(index).fadeOut(300);
+		$('.NEXT_JS').click(function(){
+			images.eq(index).fadeOut(200);
 			index=(index+1) % images.length;
 			var nextslide = index+1;
 			var currenturl = document.location.href;
@@ -44,10 +64,10 @@ $(document).ready(function() {
 			window.location.href = refresh;			
 		});	
 
-		$('.PREV').click(function(){
-			images.eq(index).fadeOut(300);
-			index=(index) % images.length;
-			var prevslide = index;
+		$('.PREV_JS').click(function(){
+			images.eq(index).fadeOut(200);
+			index=(index+1) % images.length;
+			var prevslide = index-1;
 			var currenturl = document.location.href;
 			currenturl = currenturl.split("?");
 			currenturl = currenturl[0];
@@ -55,16 +75,16 @@ $(document).ready(function() {
 			window.location.href = refresh;	
 		});
 		
-		$('.PAUSE').click(function(){
-			images.eq(index).fadeOut(300);
+		$('.PAUSE_JS').click(function(){
+			images.eq(index).fadeOut(200);
 			var currenturl = document.location.href;
 			currenturl = currenturl.split("&");
 			var refresh = currenturl[0] + "&control=pause";
 			window.location.href = refresh;	
 		});	
 
-		$('.PLAY').click(function(){
-			images.eq(index).fadeOut(300);
+		$('.PLAY_JS').click(function(){
+			images.eq(index).fadeOut(200);
 			var currenturl = document.location.href;
 			currenturl = currenturl.split("&");
 			var refresh = currenturl[0] + "&control=play";

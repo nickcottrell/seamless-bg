@@ -5,21 +5,25 @@ Seemless is a fullscreen slide show that is controlled by query string parameter
 
 ### Demo
 
-[Click here to view the demo](http://istitch.net/seamless-bg/demo-delux.html)
+[Click here to view the demo](http://istitch.net/seamless-bg/?slide=2&control=play)
 
 ### Arguments
 
 There are two main arguments possible. The first is to control the start slide. The other is to control the play or pause state. 
 
-If you want to make it [start on slide two](http://istitch.net/seamless-bg/demo-delux.html?start=slide02), add:
+If you want to make it [start on slide two](http://istitch.net/seamless-bg/?slide=2&control=play), use:
 
-    ?start=slide02
+    ?slide=2
 
-Note: the default state is to begin playing.
 
-If you want to [pause the state](http://istitch.net/seamless-bg/demo-delux.html?start=slide02&control=pause), you can add:
+If you want to [pause the state](http://istitch.net/seamless-bg/?start=slide02&control=pause), use:
 
-    ?start=slide02&control=pause
+    &control=pause
 
-Note: you have to add it as the second argument so you need to specify a start slide.
-THERE'S A BUG THAT'S NOTED IN THE CODE FOR THIS
+
+If you want the [slides to play](http://istitch.net/seamless-bg/?start=slide02&control=play), use:
+
+    &control=play
+
+
+NOTE: at this point all of the values need to be defined.
