@@ -5,7 +5,7 @@ Seemless is a fullscreen slide show that is controlled by query string parameter
 
 ### Demo
 
-[Click here to view the demo](http://istitch.net/seamless-bg/?slide=2&control=play)
+[Click here to view the demo](http://istitch.net/seamless-bg/?slide=1&control=play)
 
 ### Arguments
 
