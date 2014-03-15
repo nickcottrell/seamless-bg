@@ -1,5 +1,5 @@
 # Seamless
-## Slideshow that accepts query string params
+## Slideshow that is controlled by query string params
 
 Seamless is a slide show that you can control with query string parameters. That way, if you want to make a slideshow where there are options to begin at particular slides, or control pause and play states, you can use query strings to easily integrate it with other UI elements.  
 
